@@ -4,14 +4,11 @@ Introduction
 What is it?
 -----------
 
-Yampee Loader is a PHP 5 set of autoloaders which use the most effective tools on
-your server. It uses the PEAR-naming convention (http://pear.php.net/).
+Yampee Database is a PHP library that implements Active Record design
+pattern to manage your database.
 
-At the moment, Yampee Loader can use Apc, Xcache and WinCache.
-
-Moreover, if there is no cache tool installed on your server, you still can use the
-Yampee_Loader_Dumper, which is an object to dump dynamically loaded classes to
-improve perfomances.
+As Yampee Database use PDO by default, it is compatible with any database system supported by PDO.
+However, the QueryBuilder is designed for MySQL, so you may won't be able to use it in a specific context.
 
 ### Easy to use
 
@@ -26,41 +23,42 @@ a commercial environment. You are also encouraged to contribute.
 
 ### Documented
 
-Yampee Loader is fully documented and of course a full API documentation.
+Yampee Database is fully documented and of course a full API documentation.
 
 ### Fast
 
-One of the goal of Yampee Loader is to find the best way to be as faster as possible.
+One of the goal of Yampee Database is to find the best way to be as faster as possible.
 
 ### Clear error messages
 
-Whenever you have a problem with your loader, the library outputs a
-helpful message with the class name and the file where the loader searched.
-It eases the debugging a lot.
+Whenever you have a problem with your database, the library outputs a
+helpful message. It eases the debugging a lot.
 
 
 Installation
 ------------
 
-The best way to install Yampee Loader is to clone this repository:
+The best way to install Yampee Database is to clone this repository:
 
-`git clone git://github.com/yampee/Loader.git`
+`git clone git://github.com/yampee/Database.git`
 
-The library can be loaded by the built-in autoloader:
+The library can be loaded using the built-in autoloader:
 
 ``` php
-require '../src/Yampee/Loader/Universal.php';
+require 'autoloader.php';
 
-$loader = new Yampee_Loader_Universal();
+$db = new Yampee_Db_Manager();
 ```
+
+If you have already an autoloader for PEAR-naming convention, you can of course use it.
 
 Support
 -------
 
 Support questions and enhancements can be discussed on
-[GitHub](https://github.com/yampee/Loader/issues).
+[GitHub](https://github.com/yampee/Database/issues).
 
-If you find a bug, you can create a ticket in the
+If you find a bug, you can create a Database in the
 [GitHub issues](https://github.com/yampee/Loader/issues).
 
 License
