@@ -2,7 +2,7 @@
 
 require '../autoloader.php';
 
-$db = new Yampee_Db_Manager('mysql:host=localhost;dbname=test', 'root', '');
+$db = new Yampee_Db_Manager(new Yampee_Db_Dsn(Yampee_Db_Dsn::DRIVER_MYSQL, 'test'), 'root', '');
 
 /*
  * Select

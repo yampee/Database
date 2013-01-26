@@ -30,9 +30,13 @@ class Yampee_Db_Manager
 	 * @param $password
 	 * @param $charset
 	 */
-	public function __construct($dsn, $username, $password, $charset = 'UTF8')
+	public function __construct($dsn, $username = null, $password = null, $charset = 'UTF8')
 	{
-		$this->connection = new Yampee_Db_Connection($dsn, $username, $password, $charset);
+		if ($dsn instanceof Yampee_Db_Dsn) {
+			$this->connection = new Yampee_Db_Connection($dsn->render(), $username, $password, $charset);
+		} else {
+			$this->connection = new Yampee_Db_Connection($dsn, $username, $password, $charset);
+		}
 	}
 
 	/**
