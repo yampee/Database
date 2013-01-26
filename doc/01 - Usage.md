@@ -102,4 +102,23 @@ $db->createQueryBuilder()
 	->execute();
 ```
 
-The QueryBuilder is much more flexible than a simple query: you can use it in a loop, for instance.
+The QueryBuilder is much more flexible than a simple query: you can use it in a loop,
+to add WHERE elements dynamically for instance:
+
+``` php
+<?php
+$query = $db->createQueryBuilder()
+	->select('t.field, t.otherField, ot.foreignField')
+	->from('table t')
+	->limit(5);
+
+foreach ($parameters as $name => $value) {
+	$query->andWhere($name.' = :'.$name)
+		->setParameter($name, $value);
+}
+
+$results = $query->execute();
+```
+
+> **Note**: As the QueryBuilder use prepared requests, this sample is completely secured
+> against SQL injections.
