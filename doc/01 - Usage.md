@@ -11,8 +11,7 @@ To create a instance of `Yampee_Db_Manager`, you need to know your database para
 
 You have to way to create an instance of your manager: using the DSN generator or not.
 
-Using the DSN generator
-=======================
+### Using the DSN generator
 
 The DSN generator build your DSN string based on the parameters you give ot it.
 For instance, here, we create an instance of `Yampee_Db_Manager` for a MySQL
@@ -23,8 +22,7 @@ database called `test`, using user `root`.
 $db = new Yampee_Db_Manager(new Yampee_Db_Dsn(Yampee_Db_Dsn::DRIVER_MYSQL, 'test'), 'root', '');
 ```
 
-Using a classic DSN
-===================
+### Using a classic DSN
 
 The DSN generator is completely optionnal:
 
