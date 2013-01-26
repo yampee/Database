@@ -7,7 +7,7 @@ $db = new Yampee_Db_Manager(new Yampee_Db_Dsn(Yampee_Db_Dsn::DRIVER_MYSQL, 'test
 /*
  * Select
  */
-$results = $db->query('SELECT * FROM tga_audience_sessions');
+$results = $db->query('SELECT * FROM test');
 
 foreach ($results as $result) {
 	echo $result->getFirstField();
