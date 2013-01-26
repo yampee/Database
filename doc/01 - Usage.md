@@ -9,11 +9,12 @@ which is a factory of all the other classes. Thus you will only use `Yampee_Db_M
 
 To create a instance of `Yampee_Db_Manager`, you need to know your database parameters.
 
-You have to way to create an instance of your manager: using the DSN generator or not.
+You have two ways to create an instance of your manager: using the DSN generator or
+using a classic DSN string.
 
 ### Using the DSN generator
 
-The DSN generator build your DSN string based on the parameters you give ot it.
+The DSN generator build your DSN string based on the parameters you give to it.
 For instance, here, we create an instance of `Yampee_Db_Manager` for a MySQL
 database called `test`, using user `root`.
 
@@ -22,7 +23,15 @@ database called `test`, using user `root`.
 $db = new Yampee_Db_Manager(new Yampee_Db_Dsn(Yampee_Db_Dsn::DRIVER_MYSQL, 'test'), 'root', '');
 ```
 
-### Using a classic DSN
+However, you can build many kind of DSN for many drivers:
+
+```
+Yampee_Db_Dsn::DRIVER_DBLIB, Yampee_Db_Dsn::DRIVER_FIREBIRD, Yampee_Db_Dsn::DRIVER_INFORMIX,
+Yampee_Db_Dsn::DRIVER_MSSQL, Yampee_Db_Dsn::DRIVER_MYSQL, Yampee_Db_Dsn::DRIVER_OCI, Yampee_Db_Dsn::DRIVER_ODBC,
+Yampee_Db_Dsn::DRIVER_PGSQL, Yampee_Db_Dsn::DRIVER_SQLITE, Yampee_Db_Dsn::DRIVER_SYBASE,
+```
+
+### Using a classic DSN string
 
 The DSN generator is completely optionnal:
 
@@ -30,8 +39,6 @@ The DSN generator is completely optionnal:
 <?php
 $db = new Yampee_Db_Manager('mysql:host=localhost;dbname=test', 'root', '');
 ```
-
-It is just a little bit more useful to use it.
 
 Execute a query
 -----------------------
