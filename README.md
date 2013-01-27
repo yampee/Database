@@ -49,4 +49,4 @@ About
 -------
 
 Yampee Database is licensed under the MIT license (see LICENSE file).
-The Yampee Redis library is developed and maintained by the Titouan Galopin.
+The Yampee Database library is developed and maintained by the Titouan Galopin.
