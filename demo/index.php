@@ -18,9 +18,16 @@ foreach ($results as $result) {
  * Insert
  */
 $record = new Yampee_Db_Record();
+
+// You can use camelCased magic methods ...
 $record->setFirstField('127.0.0.1');
 $record->setSecondField('127.0.0.1');
 $record->setDateField(new DateTime());
+
+// Or real methods
+$record->set('firstField', '127.0.0.1');
+$record->set('secondField', '127.0.0.1');
+$record->set('dateField', new DateTime());
 
 $db->insert('table_name', $record);
 

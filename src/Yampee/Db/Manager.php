@@ -84,7 +84,7 @@ class Yampee_Db_Manager
 	 *
 	 * @param                  $table
 	 * @param Yampee_Db_Record $record
-	 * @return array|Yampee_Db_Statement
+	 * @return array
 	 */
 	public function insert($table, Yampee_Db_Record $record)
 	{
@@ -124,7 +124,7 @@ class Yampee_Db_Manager
 	}
 
 	/**
-	 * Uncast a value to stroe it in MySQL.
+	 * Uncast a value to store it in MySQL.
 	 *
 	 * @param $value
 	 * @return mixed
